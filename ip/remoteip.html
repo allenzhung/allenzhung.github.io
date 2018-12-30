@@ -1,0 +1,28 @@
+<html>
+
+<head>
+    <title></title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+</head>
+
+<body>
+    <form name="myForm">
+        <br />MAC地址：<input type="text" name="macAddress">
+        <br />IP地址：<input type="text" name="ipAddress">
+        <br />主机名：<input type="text" name="hostName">
+    </form>
+
+</body>
+
+</html>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script>
+    var ip=returnCitySN.cip;
+    //returnCitySN是返回的一个对象，其中包含三个属性值，以北京的IP用户为例：
+    //returnCitySN={cip: "124.200.177.10", cid: "110000", cname: "北京市"}
+    var ipAddress = document.getElementsByName("ipAddress");
+    ipAddress[0].value = ip
+    // document.write(returnCitySN["cip"]+','+returnCitySN["cname"])  
+</script>
+
