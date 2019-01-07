@@ -69,6 +69,7 @@
     // 回调执行函数
     function onBack(res) {
       alert(JSON.stringify(res));
+      alert("1 cookies::\n" + getCookies())
       // alert(res);
     }
   </script>
@@ -80,22 +81,21 @@
     // setCookie("bbb", "bbb1", "/")
 
     // alert("cookie l=" + getCookie("l"))
-    alert("1 cookies::\n" + getCookies())
-    return
+    // alert("1 cookies::\n" + getCookies())
 
-    var xhr = new XMLHttpRequest(); // IE8/9需用window.XDomainRequest兼容
-    // 前端设置是否带cookie
-    xhr.withCredentials = true;
-    xhr.open('post', 'http://113.111.45.147:4000/corsTest', true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    xhr.send('user=admin');
-    xhr.onreadystatechange = function () {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        alert(xhr.responseText);
-        // alert("cookie l=" + getCookie("l"))
-        alert("2 cookies::\n" + getCookies())
-      }
-    };
+    // var xhr = new XMLHttpRequest(); // IE8/9需用window.XDomainRequest兼容
+    // // 前端设置是否带cookie
+    // xhr.withCredentials = true;
+    // xhr.open('post', 'http://113.111.45.147:4000/corsTest', true);
+    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    // xhr.send('user=admin');
+    // xhr.onreadystatechange = function () {
+    //   if (xhr.readyState == 4 && xhr.status == 200) {
+    //     alert(xhr.responseText);
+    //     // alert("cookie l=" + getCookie("l"))
+    //     alert("2 cookies::\n" + getCookies())
+    //   }
+    // };
   </script>
 
 
