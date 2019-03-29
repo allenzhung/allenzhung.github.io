@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://libs.baidu.com/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript">
+        function showData(result) {
+            console.log("@@1")
+            console.log(result)
+            console.log("@@2")
+        }
+
+        //jsonp，可以，不过本例子不是IP地址
+        
+        $(document).ready(function () {
+            $.ajax({
+                url: "http://www.autohome.com.cn/ashx/AjaxIndexCarFind.ashx?type=1",
+                type: 'GET',
+                dataType: 'JSONP', // 处理Ajax跨域问题
+                // jsonp 和 jsonpCallback，可以不要，jquery会使用默认的
+                jsonp: "callback", //传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)
+                jsonpCallback: "showData", //自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写"?"，jQuery会自动为你处理数据
+                success: function (data) {
+                    alert(data)
+                },
+                error: function () {
+                    document.write('获取数据失败');
+                }
+
+                // success: function (data) {
+                //     console.log(data)
+                //     $('#foo').append("Name: " + data.result.branditems[1].id);
+                // }
+            });
+        })
+    </script>
+</head>
+
+<body>
+    <div id="foo">
+    </div>
+</body>
+
+</html>
