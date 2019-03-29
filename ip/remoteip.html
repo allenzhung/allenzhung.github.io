@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <script src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.4.1.min.js"></script>
 </head>
 
 <body>
     <h1>ddd</h1>
-    <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+    <script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
     <script type="text/javascript">
-    console.log(returnCitySN);
+        alert(returnCitySN);
+        
+        //跨域问题，失败
         $.ajax({
             url: 'http://ip.cip.cc',
             success: function (data) {

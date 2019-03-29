@@ -1,117 +1,51 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
-  <title>zm</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <LINK REL="Bookmark" HREF="favicon.ico">
+    <link type="text/css" rel="stylesheet" href="index.css" media="all">
+    <title>zm</title>
 
-  <script language="javascript" type="text/javascript" src="http://allenzhung.github.io/currentip.js">
-  </script>
-  <script language="javascript" type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8">
-  </script>
-  <script>
-    function getCookie(name) {
-      var strcookie = document.cookie; //获取cookie字符串
-      var arrcookie = strcookie.split("; "); //分割
-      //遍历匹配
-      for (var i = 0; i < arrcookie.length; i++) {
-        var arr = arrcookie[i].split("=");
-        if (arr[0] == name) {
-          return arr[1];
-        }
-      }
-      return "";
-    }
-
-    function getCookies() {
-      var strcookie = document.cookie; //获取cookie字符串
-      var arrcookie = strcookie.split("; "); //分割
-      //遍历匹配
-      cs = ""
-      for (var i = 0; i < arrcookie.length; i++) {
-        var arr = arrcookie[i].split("=");
-        cs = cs + arr[0] + "=" + arr[1] + "\n"
-      }
-      return cs;
-    }
-
-    function setCookie(name, value, path) {
-      alert("set..." + name)
-      //cookie改变它的赋值并不意味着丢失原来的值
-      //设置名称为name,值为value的Cookie
-      var expdate = new Date(); //初始化时间
-      expdate.setTime(expdate.getTime() + 30 * 60 * 1000); //时间
-      document.cookie = name + "=" + value + ";expires=" + expdate.toGMTString() + ";path=" +
-        path + ";";
-      //即document.cookie= name+"="+value+";path=/";   时间可以不要，但路径(path)必须要填写，因为JS的默认路径是当前页，如果不填，此cookie只在当前页面生效！~
-    }
-  </script>
-
-  <script language="javascript" type="text/javascript">
-    //  var str = 'returnCurrentIP = {"ip": "113.111.46.248"};'
-    // document.write(returnCurrentIP.ip)
-    // alert(returnCurrentIP.ip)
-  </script>
-  <script>
-    //设置用户的cookie为 user+IP地址
-    var userid = "user" + returnCitySN.cip
-    // setCookie("user", userid, "/")
-
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-
-    // jsonp 去服务器获取该用户的状态，登录次数，时间等 
-    // 传参并指定回调执行函数为onBack
-    script.src = 'http://113.111.45.147:4000/login?userid=' + userid + '&callback=onBack';
-    document.head.appendChild(script);
-
-    // 回调执行函数
-    function onBack(res) {
-      alert(JSON.stringify(res));
-      alert("1 cookies::\n" + getCookies())
-      // alert(res);
-    }
-  </script>
-  <script>
-    // setCookie("aaa", "aaa1", "localhost")
-    // setCookie("bbb", "bbb1", "localhost")
-    //手机浏览器，不能用localhost，也不能使用192.168.31.173 IP地址
-    // setCookie("aaa", "aaa1", "/")
-    // setCookie("bbb", "bbb1", "/")
-
-    // alert("cookie l=" + getCookie("l"))
-    // alert("1 cookies::\n" + getCookies())
-
-    // var xhr = new XMLHttpRequest(); // IE8/9需用window.XDomainRequest兼容
-    // // 前端设置是否带cookie
-    // xhr.withCredentials = true;
-    // xhr.open('post', 'http://113.111.45.147:4000/corsTest', true);
-    // xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    // xhr.send('user=admin');
-    // xhr.onreadystatechange = function () {
-    //   if (xhr.readyState == 4 && xhr.status == 200) {
-    //     alert(xhr.responseText);
-    //     // alert("cookie l=" + getCookie("l"))
-    //     alert("2 cookies::\n" + getCookies())
-    //   }
-    // };
-  </script>
-
-
-</head>
-
-<body>
-  <div>
-    <div class="txtCenter">
-      <p>生命是一团欲望，欲望不满足便痛苦，满足便无聊<p>
-          <p align="right">叔本华</p>
-    </div>
+    <script language="javascript" type="text/javascript">
+        // 以下方式直接跳转
+       //window.location.href="http://{{.Ip}}:8003";
+       // 以下方式定时跳转
+       //setTimeout('javascript:location.href="http://{{.Ip}}:8003"', 5000);       
+    </script>
+  </head>
+  <body>
     <div>
-      <a href="http://121.33.171.96:8003">读书时光1</a>
-      <a href="https://zm.cloudns.asia:8443">读书时光2</a>
-    </div>
-  </div>
-</body>
+        <div class="txtCenter" style="">
+          <p>生命是一团欲望，欲望不满足便痛苦，满足便无聊<p>
+          <p align="right">叔本华</p>
+       </div>
 
+       <div class="txtCenter">
+         <!-- <a href="https://baike.baidu.com/vbaike/腊月初八腊八粥/5470">
+          <img class="cjtp" src="images/春节2.jpg"/>
+          <img class="cjtp" src="images/春节1.jpg"/>
+          <img class="cjtp" src="images/春节3.jpg"/>
+        </a> -->
+       </div>
+
+       <div>
+          <!-- <h3><a href="images/lhwh.jpg">2019春节联欢晚会节目单</a></h3> -->
+          <h3><a href="2019.html">2019放假快查</a></h3>
+          <h3><a href="mytool.html">在线工具</a></h3>
+          <h3>
+            <!-- <a href="http://59.37.79.189:80">读书时光1</a> -->
+            <a href="https://zm.cloudns.asia:443">读书时光</a>
+          </h3>
+          <h3>
+            <!-- <a href="http://59.37.79.189:80">读书时光1</a> -->
+            <a href="https://mp.weixin.qq.com/s?__biz=MjM5NTU0NTYxNA==&mid=2652649343&idx=1&sn=6a0694fa4603b1d9fccde2f9cd6ab677&chksm=bd1e401e8a69c90802e6784273d300036dc2dd862801534ee2697c37f2782867272a9f8c3439&mpshare=1&scene=1&srcid=0221bUtGgetZDOHCJZ2hDHev#rd">好文推荐</a>
+          </h3>
+       </div>
+
+    </div>
+  </body>
 </html>
+
+ 
